@@ -12,7 +12,7 @@
 
 ##Script
 
-#import tweepy. Tweepy enables Python to communicate with the Twitter platform and use it API
+#import tweepy. Tweepy enables Python to communicate with the Twitter platform and use it's API
 #textblob is a python library for processing textual data
 import tweepy
 from textblob import TextBlob
