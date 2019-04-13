@@ -1,0 +1,54 @@
+
+#Steps
+#1. Register for Twitter API
+#2. Install Dependencies
+#3. Write our Script
+
+#Dependency 1: Install tweepy using pip
+#tweepy is our library for accessing the Twitter API
+
+#Dependency 2: Install textblob using pip
+#textblob will help us perform the actual sentiment analysis
+
+##Script
+
+#import tweepy. Tweepy enables Python to communicate with the Twitter platform and use it API
+#textblob is a python library for processing textual data
+import tweepy
+from textblob import TextBlob
+
+#the consumer key, the consumer secret key, the access token and the secret access token copied from my Twitter Developer Account
+consumer_key = '37RKyXnfOKnjcmTJzfd6LZ2by'
+consumer_secret = 'YilhxNGSLGlLvJNgirWr9RDbwgKdYFmaHvwLOML8Eae3yT45zQ'
+
+access_token = '3035186966-4rfxBLAF3mRUTxGsw7vOqfcvaGAs7k8RguUlAL9'
+access_token_secret = 'wPZQlwajieTU5Xnmb495jSSRNmgtkLCvnySWuhCQ5uHHK'
+
+#create variable 'auth' for authentication using the OAuthHandler method of tweepy
+from tweepy.auth import OAuthHandler
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+
+#'api' is our main variable
+api = tweepy.API(auth)
+
+#store a list of tweets in 'public_tweets' with an argument
+public_tweets = api.search('Ocasio')
+#I do not endorse ocasio cortez in any way
+
+#use for loop to go through every tweet
+for tweet in public_tweets:
+	print(tweet.text)
+	analysis = TextBlob(tweet.text)
+	print(analysis.sentiment)
+
+
+#the results of running this code will give a value of polarity and a value of subjectivity. 
+#Polarity measures how positive or negative the sentiment is.
+#Subjectivity measures how opinionated or how factual it is.
+#Polarity will be between -1 and 1 where towards 1 is towards positive sentiment and towards -1 is negative sentiment. 
+#Subjectivity will be from 0 to 1 where 0 is very objective and 1 is very subjective.
+
+
+
+
