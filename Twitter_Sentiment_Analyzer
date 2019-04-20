@@ -18,11 +18,11 @@ import tweepy
 from textblob import TextBlob
 
 #the consumer key, the consumer secret key, the access token and the secret access token copied from my Twitter Developer Account
-consumer_key = '37RKyXnfOKnjcmTJzfd6LZ2by'
-consumer_secret = 'YilhxNGSLGlLvJNgirWr9RDbwgKdYFmaHvwLOML8Eae3yT45zQ'
+consumer_key = '...'
+consumer_secret = '...'
 
-access_token = '3035186966-4rfxBLAF3mRUTxGsw7vOqfcvaGAs7k8RguUlAL9'
-access_token_secret = 'wPZQlwajieTU5Xnmb495jSSRNmgtkLCvnySWuhCQ5uHHK'
+access_token = '...'
+access_token_secret = '...'
 
 #create variable 'auth' for authentication using the OAuthHandler method of tweepy
 from tweepy.auth import OAuthHandler
